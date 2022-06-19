@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/auxiliar', AuxiliarController::class);
+
+Route::resource('paciente', '\App\Http\Controllers\PacienteController');
