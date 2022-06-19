@@ -1,23 +1,82 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<!DOCTYPE html>
+<html lang="es">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-                    {{ __('You are logged in, ADMIN!') }}
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
+                    </a>
                 </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Servicios
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container w-100 bg-primary bg-opacity-75 border border-info text-center text-white">
+                <p class="mx-4 my-4 fs-5">
+                    <b>
+                        TÍTULO DE LA SECCIÓN
+                    </b>
+                    <br>
+                    Subtítulo
+                </p>
             </div>
         </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+        </div>
+    </main>
+
+
+</body>
+<footer>
+    <hr>
+    <div class="text-center">
+        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
+        <!-- Pie de página. Es el mismo para cada vista -->
+        <p>Horario de visitas
+            Hospitalización 11:00 a.m. – 5:00 p.m.<br>
+            UCI-UCIN 11:00 a.m. – 3:00 p.m.<br>
+
+            “Durante la emergencia por COVID 19,<br>
+            debimos restringir los acompañantes y eliminar las visitas.”</p>
     </div>
-</div>
+
+</footer>
+
+</html>
 @endsection
