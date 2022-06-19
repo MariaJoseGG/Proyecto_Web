@@ -19,7 +19,7 @@ class Auxiliar
     {
         switch (auth::user()->tipo_usuario) {
             case ('1'):
-                return redirect('home'); //si es administrador redirige al HOME
+                return redirect('Administrador.home'); //si es administrador redirige al HOME
                 break;
             case ('0'):
                 return $next($request); // si es un usuario continúa a la ruta USER

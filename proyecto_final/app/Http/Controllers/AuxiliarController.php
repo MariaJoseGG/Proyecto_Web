@@ -21,7 +21,7 @@ class AuxiliarController extends Controller
 
     public function index()
     {
-        return view('auxiliar');
+        return view('Auxiliar.auxiliar');
     }
 
     /**
