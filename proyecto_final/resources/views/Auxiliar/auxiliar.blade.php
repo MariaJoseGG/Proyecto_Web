@@ -12,12 +12,11 @@
 
 <body>
     <header>
-        <!-- Encabezado. Es el mismo para cada vista -->
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="Logo del SES" width="250">
+                        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
                     </a>
                 </div>
             </nav>
@@ -47,19 +46,36 @@
             <div class="container w-100 bg-primary bg-opacity-75 border border-info text-center text-white">
                 <p class="mx-4 my-4 fs-5">
                     <b>
-                        TÍTULO DE LA SECCIÓN
+                        CONTROL HEMODINÁMICO
                     </b>
                     <br>
-                    Subtítulo
+                    Inicio
                 </p>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Contenido de la vista -->
-        <div class="text-center p-3">
-            <img class="img-fluid" src="{{ asset('img/hospital.jpg') }}" alt="Hospital Universitario de Caldas">
+        <div class="container">
+            <div class="row p-3">
+                <div class="col">
+                    <a href="{{route('paciente.index')}}" class="list-group-item list-group-item-action">
+                        <div class="text-center p-3">
+                            <img class="img-fluid" src="{{ asset('img/pacientes.png') }}" alt="Enfermera hablando con una niña" width="300">
+                            <figcaption class="p-2">Administrar Pacientes</figcaption>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="text-center p-3">
+                            <img class="img-fluid" src="{{ asset('img/signos.jpg') }}" alt="Brazo de una persona que le están tomando la presión" width="300">
+                            <figcaption class="p-2">Administrar Signos Vitales</figcaption>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
         </div>
     </main>
 
@@ -68,7 +84,7 @@
 <footer>
     <hr>
     <div class="text-center">
-        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="Logo del SES" width="250">
+        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
         <!-- Pie de página. Es el mismo para cada vista -->
         <p>Horario de visitas
             Hospitalización 11:00 a.m. – 5:00 p.m.<br>

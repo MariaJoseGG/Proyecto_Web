@@ -12,12 +12,11 @@
 
 <body>
     <header>
-        <!-- Encabezado. Es el mismo para cada vista -->
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="Logo del SES" width="250">
+                        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
                     </a>
                 </div>
             </nav>
@@ -57,9 +56,8 @@
     </header>
 
     <main>
-        <!-- Contenido de la vista -->
-        <div class="text-center p-3">
-            <img class="img-fluid" src="{{ asset('img/hospital.jpg') }}" alt="Hospital Universitario de Caldas">
+        <div class="container">
+            
         </div>
     </main>
 
@@ -68,7 +66,7 @@
 <footer>
     <hr>
     <div class="text-center">
-        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="Logo del SES" width="250">
+        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
         <!-- Pie de página. Es el mismo para cada vista -->
         <p>Horario de visitas
             Hospitalización 11:00 a.m. – 5:00 p.m.<br>
