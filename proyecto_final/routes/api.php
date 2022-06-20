@@ -19,5 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('horas',[HourController::class, 'index'])->name('fluids.index');
+//Route::get('horas',[HourController::class, 'index'])->name('fluids.index');
+
 
