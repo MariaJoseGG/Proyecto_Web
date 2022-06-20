@@ -37,7 +37,7 @@
                                     Servicios
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('api') }}">Api</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
                                 </ul>
                             </li>

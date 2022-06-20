@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api', [ApiController::class, 'index']);
+Route::get('/api', [ApiController::class, 'index'])->name('api');
 
 // Route::resource('/', '\App\Http\Controllers\ProductosController');
