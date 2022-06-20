@@ -54,23 +54,21 @@
             </div>
         </div>
     </main>
+    <footer>
+        <hr>
+        <div class="text-center">
+            <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
+            <!-- Pie de página. Es el mismo para cada vista -->
+            <p>Horario de visitas
+                Hospitalización 11:00 a.m. – 5:00 p.m.<br>
+                UCI-UCIN 11:00 a.m. – 3:00 p.m.<br>
 
+                “Durante la emergencia por COVID 19,<br>
+                debimos restringir los acompañantes y eliminar las visitas.”</p>
+        </div>
 
+    </footer>
 </body>
-<footer>
-    <hr>
-    <div class="text-center">
-        <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
-        <!-- Pie de página. Es el mismo para cada vista -->
-        <p>Horario de visitas
-            Hospitalización 11:00 a.m. – 5:00 p.m.<br>
-            UCI-UCIN 11:00 a.m. – 3:00 p.m.<br>
-
-            “Durante la emergencia por COVID 19,<br>
-            debimos restringir los acompañantes y eliminar las visitas.”</p>
-    </div>
-
-</footer>
 
 </html>
 @endsection
