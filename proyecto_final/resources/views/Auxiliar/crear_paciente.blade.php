@@ -69,11 +69,35 @@
                             <option value="1">Salud Total</option>
                             <option value="2">Nueva EPS</option>
                             <option value="3">Sanitas</option>
+                            <option value="4">Otra</option>
                         </select>
                     </div>
                 </div>
 
-                <input type="submit" value="Guardar">
+                <div class="row mb-3">
+                    <label for="sexo" class="col-md-4 col-form-label text-md-end">{{ __('Sexo') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-select" aria-label="Default select example" name="sexo" id="sexo">
+                            <option value="1">Femenino</option>
+                            <option value="2">Masculino</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="edad" class="col-md-4 col-form-label text-md-end">{{ __('Edad') }}</label>
+                    <div class="col-md-6">
+                        <input id="edad" type="number" class="form-control" name="edad" value="{{ old('edad') }}" placeholder="edad en años" onfocusout="validar()" required>
+                    </div>
+                </div>
+
+                <div class="row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                        <button type="submit" class="btn btn-primary" id="boton" disabled>
+                            {{ __('Registrar') }}
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </main>
@@ -91,6 +115,7 @@
         </div>
     </footer>
 </body>
+<script src="{{ asset('codigos/verificar.js') }}"></script>
 
 </html>
 @endsection
