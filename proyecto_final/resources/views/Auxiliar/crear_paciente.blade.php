@@ -34,16 +34,17 @@
 
     <main>
         <div class="container p-3">
+            @include('flash-message')
             <form action="{{ route('paciente.store') }}" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <label for="tipoDoc" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de documento') }}</label>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" name="tipoDoc" id="tipoDoc">
-                            <option value="1">Cédula de ciudadanía</option>
-                            <option value="2">Tarjeta de identidad</option>
-                            <option value="3">Registro civil</option>
-                            <option value="4">Pasaporte</option>
+                            <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
+                            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                            <option value="Registro civil">Registro civil</option>
+                            <option value="Pasaporte">Pasaporte</option>
                         </select>
                     </div>
                 </div>
@@ -66,10 +67,10 @@
                     <label for="entidad" class="col-md-4 col-form-label text-md-end">{{ __('Entidad') }}</label>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" name="entidad" id="entidad">
-                            <option value="1">Salud Total</option>
-                            <option value="2">Nueva EPS</option>
-                            <option value="3">Sanitas</option>
-                            <option value="4">Otra</option>
+                            <option value="Salud Total">Salud Total</option>
+                            <option value="Nueva EPS">Nueva EPS</option>
+                            <option value="Sanitas">Sanitas</option>
+                            <option value="Otra">Otra</option>
                         </select>
                     </div>
                 </div>
@@ -78,8 +79,8 @@
                     <label for="sexo" class="col-md-4 col-form-label text-md-end">{{ __('Sexo') }}</label>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" name="sexo" id="sexo">
-                            <option value="1">Femenino</option>
-                            <option value="2">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
                         </select>
                     </div>
                 </div>
@@ -95,11 +96,11 @@
                     <label for="reg" class="col-md-4 col-form-label text-md-end">{{ __('Régimen de Seguridad Social') }}</label>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" name="reg" id="reg">
-                            <option value="1">Contributivo</option>
-                            <option value="2">Subsidiado</option>
-                            <option value="3">Indígena</option>
-                            <option value="4">Vinculado</option>
-                            <option value="5">Particular</option>
+                            <option value="Contributivo">Contributivo</option>
+                            <option value="Subsidiado">Subsidiado</option>
+                            <option value="Indígena">Indígena</option>
+                            <option value="Vinculado">Vinculado</option>
+                            <option value="Particular">Particular</option>
                         </select>
                     </div>
                 </div>
@@ -108,10 +109,10 @@
                     <label for="tipoAf" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de afiliación') }}</label>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" name="tipoAf" id="tipoAf">
-                            <option value="1">Cotizante</option>
-                            <option value="2">Beneficiario</option>
-                            <option value="3">Adicional</option>
-                            <option value="4">Otro</option>
+                            <option value="Cotizante">Cotizante</option>
+                            <option value="Beneficiario">Beneficiario</option>
+                            <option value="Adicional">Adicional</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
                 </div>
@@ -129,7 +130,7 @@
                         <input id="fecha" type="date" class="form-control" name="fecha" value="{{ old('fecha') }}" required>
                     </div>
                 </div>
-                
+
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary" id="boton" disabled>

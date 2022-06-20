@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 
@@ -38,13 +40,24 @@ class PacienteController extends Controller
         $paciente = new Paciente();
         //variable instanciada de la clase Paciente
         //-> campos de la base de datos = -> name del formulario
-        $paciente->nombre = $request->nombre;
-        $paciente->descripcion = $request->descri;
-        $paciente->imagen = $request->foto;
-        $paciente->precio = $request->precio;
-        $paciente->save();
+        $existe = DB::table('pacientes')->where('documento', $request->iden)->first();
+        if (is_null($existe)) {
+            $paciente->documento = $request->iden;
+            $paciente->tipoDoc = $request->tipoDoc;
+            $paciente->nombre = $request->name;
+            $paciente->entidad = $request->entidad;
+            $paciente->sexo = $request->sexo;
+            $paciente->edad = $request->edad;
+            $paciente->regimen = $request->reg;
+            $paciente->tipoAfiliacion = $request->tipoAf;
+            $paciente->cama = $request->cama;
+            $paciente->fechaIngreso = $request->fecha;
+            $paciente->save();
 
-        return redirect()->route('productos.index');
+            return back()->with('success', 'Paciente guardado');
+        } else {
+            return back()->with('error', 'El número de documento ya existe');
+        }
     }
 
     /**
