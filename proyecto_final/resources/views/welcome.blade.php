@@ -63,12 +63,12 @@
             <!-- Si es Auxiliar de enfermería -->
             @if(Auth::user()->tipo_usuario === 0)
                 <div class="container pt-3 text-center w-25">
-                    <a href="{{ route('auxiliar.index') }}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item-success">Volver al Control Hemodinámico</a>
+                    <a href="{{ route('auxiliar.index') }}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item-success">Volver al Home</a>
                 </div>
             @else
                 <!-- Si es un Administrador -->
                 <div class="container pt-3 text-center w-25">
-                    <a href="{{ route('home') }}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item-success">Volver al Panel de Control</a>
+                    <a href="{{ route('home') }}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item-success">Volver al Home</a>
                 </div>
             @endif
         @endif

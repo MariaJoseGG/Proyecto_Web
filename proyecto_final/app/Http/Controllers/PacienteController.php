@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Paciente;
 
 class PacienteController extends Controller
 {
@@ -34,7 +35,16 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $paciente = new Paciente();
+        //variable instanciada de la clase Paciente
+        //-> campos de la base de datos = -> name del formulario
+        $paciente->nombre = $request->nombre;
+        $paciente->descripcion = $request->descri;
+        $paciente->imagen = $request->foto;
+        $paciente->precio = $request->precio;
+        $paciente->save();
+
+        return redirect()->route('productos.index');
     }
 
     /**

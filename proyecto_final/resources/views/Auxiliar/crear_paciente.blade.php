@@ -87,10 +87,49 @@
                 <div class="row mb-3">
                     <label for="edad" class="col-md-4 col-form-label text-md-end">{{ __('Edad') }}</label>
                     <div class="col-md-6">
-                        <input id="edad" type="number" class="form-control" name="edad" value="{{ old('edad') }}" placeholder="edad en años" onfocusout="validar()" required>
+                        <input id="edad" type="number" class="form-control" name="edad" value="{{ old('edad') }}" placeholder="edad en años" onchange="validar()" required>
                     </div>
                 </div>
 
+                <div class="row mb-3">
+                    <label for="reg" class="col-md-4 col-form-label text-md-end">{{ __('Régimen de Seguridad Social') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-select" aria-label="Default select example" name="reg" id="reg">
+                            <option value="1">Contributivo</option>
+                            <option value="2">Subsidiado</option>
+                            <option value="3">Indígena</option>
+                            <option value="4">Vinculado</option>
+                            <option value="5">Particular</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="tipoAf" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de afiliación') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-select" aria-label="Default select example" name="tipoAf" id="tipoAf">
+                            <option value="1">Cotizante</option>
+                            <option value="2">Beneficiario</option>
+                            <option value="3">Adicional</option>
+                            <option value="4">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="cama" class="col-md-4 col-form-label text-md-end">{{ __('Cama') }}</label>
+                    <div class="col-md-6">
+                        <input id="cama" type="text" class="form-control" name="cama" value="{{ old('cama') }}" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="fecha" class="col-md-4 col-form-label text-md-end">{{ __('Fecha de ingreso') }}</label>
+                    <div class="col-md-6">
+                        <input id="fecha" type="date" class="form-control" name="fecha" value="{{ old('fecha') }}" required>
+                    </div>
+                </div>
+                
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary" id="boton" disabled>

@@ -33,7 +33,7 @@
     </header>
 
     <main>
-        <div class="container w-25 p-3">
+        <div class="container-fluid w-100 p-3">
             <a href="#" class="list-group-item list-group-item-action">
                 <div class="text-center p-3">
                     <img class="img-fluid" src="{{ asset('img/pacientes.png') }}" alt="Enfermera hablando con una niña" width="300">
@@ -43,14 +43,12 @@
         </div>
         <div class="container text-center text-white">
             <div class="row">
-                <div class="col p-5"></div>
-                <div class="col p-5">
+                <div class="col">
                     <a href="{{route('paciente.create')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 166, 220);">Registrar nuevo paciente</a>
                 </div>
-                <div class="col p-5">
+                <div class="col">
                     <a href="#" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 166, 220);">Ver los pacientes registrados</a>
                 </div>
-                <div class="col p-5"></div>
             </div>
         </div>
     </main>
