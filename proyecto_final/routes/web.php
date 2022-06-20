@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\FluidController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api', [ApiController::class, 'index'])->name('api');
+Route::get('api', [ApiController::class, 'index'])->name('api');
+
+Route::get('cuadro',[FluidController::class, 'index'])->name('fluids.index');
+Route::post('cuadro/creado', [FluidController::class, 'store'])->name('fluids.store');
 
 // Route::resource('/', '\App\Http\Controllers\ProductosController');

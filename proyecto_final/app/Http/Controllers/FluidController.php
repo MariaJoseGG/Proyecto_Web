@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Fluid;
 use App\Http\Requests\StoreFluidRequest;
 use App\Http\Requests\UpdateFluidRequest;
+use Illuminate\Http\Request;
 
 class FluidController extends Controller
 {
@@ -16,9 +17,9 @@ class FluidController extends Controller
     public function index()
     {
         //
-        $hours=Hour::all();
+        $fluids=Fluid::all();
        // return view('fluids.index',compact('hours'));
-            return $hours;
+        return view('fluids.index', compact('fluids'));
     }
 
     /**
@@ -37,9 +38,18 @@ class FluidController extends Controller
      * @param  \App\Http\Requests\StoreFluidRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFluidRequest $request)
+    public function store(Request $request)
     {
-        //
+        $exit = false;
+        foreach (Fluid::all() as $fluid) {
+            if($fluid->input==null && $exit==false){
+                $fluid->update([
+                    'input'=>(float)$request->input
+                ]);
+                $exit = true;
+            }
+        }
+        return FluidController::index();
     }
 
     /**
