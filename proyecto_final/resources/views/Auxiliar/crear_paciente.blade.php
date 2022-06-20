@@ -33,9 +33,49 @@
     </header>
 
     <main>
-        <form action="">
+        <div class="container p-3">
+            <form action="{{ route('paciente.store') }}" method="POST">
+                @csrf
+                <div class="row mb-3">
+                    <label for="tipoDoc" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de documento') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-select" aria-label="Default select example" name="tipoDoc" id="tipoDoc">
+                            <option value="1">Cédula de ciudadanía</option>
+                            <option value="2">Tarjeta de identidad</option>
+                            <option value="3">Registro civil</option>
+                            <option value="4">Pasaporte</option>
+                        </select>
+                    </div>
+                </div>
 
-        </form>
+                <div class="row mb-3">
+                    <label for="iden" class="col-md-4 col-form-label text-md-end">{{ __('Número de documento') }}</label>
+                    <div class="col-md-6">
+                        <input id="iden" type="text" class="form-control" name="iden" value="{{ old('iden') }}" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo') }}</label>
+                    <div class="col-md-6">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="entidad" class="col-md-4 col-form-label text-md-end">{{ __('Entidad') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-select" aria-label="Default select example" name="entidad" id="entidad">
+                            <option value="1">Salud Total</option>
+                            <option value="2">Nueva EPS</option>
+                            <option value="3">Sanitas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
     </main>
     <footer>
         <hr>
