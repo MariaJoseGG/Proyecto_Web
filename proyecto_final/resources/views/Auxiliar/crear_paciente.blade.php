@@ -26,34 +26,16 @@
                         CONTROL HEMODINÁMICO
                     </b>
                     <br>
-                    Inicio
+                    Pacientes
                 </p>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <div class="row p-3">
-                <div class="col">
-                    <a href="{{route('paciente.index')}}" class="list-group-item list-group-item-action">
-                        <div class="text-center p-3">
-                            <img class="img-fluid" src="{{ asset('img/pacientes.png') }}" alt="Enfermera hablando con una niña" width="300">
-                            <figcaption class="p-2">Administrar Pacientes</figcaption>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <div class="text-center p-3">
-                            <img class="img-fluid" src="{{ asset('img/signos.jpg') }}" alt="Brazo de una persona que le están tomando la presión" width="300">
-                            <figcaption class="p-2">Administrar Signos Vitales</figcaption>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </div>
+        <form action="">
+            
+        </form>
     </main>
 
 
