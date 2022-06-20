@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
 
 class PacienteController extends Controller
 {
@@ -52,11 +53,12 @@ class PacienteController extends Controller
             $paciente->tipoAfiliacion = $request->tipoAf;
             $paciente->cama = $request->cama;
             $paciente->fechaIngreso = $request->fecha;
+            $paciente->auxiliarId = Auth::user()->id;
             $paciente->save();
 
-            return back()->with('success', 'Paciente guardado');
+            return redirect()->route('paciente.index')->with('success', 'Paciente guardado');
         } else {
-            return back()->with('error', 'El número de documento ya existe');
+            return redirect()->route('paciente.index')->with('error', 'El número de documento ya existe');
         }
     }
 

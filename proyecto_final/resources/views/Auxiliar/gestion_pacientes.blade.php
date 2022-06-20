@@ -43,6 +43,8 @@
                 </div>
             </a>
         </div>
+        @include('flash-message')
+
         <div class="container text-center text-white">
             <div class="row">
                 <div class="col">

@@ -25,6 +25,9 @@ class Pacientes extends Migration
             $table->string('tipoAfiliacion');
             $table->string('cama');
             $table->date('fechaIngreso');
+            $table->unsignedBigInteger('auxiliarId');
+            
+            $table->foreign('auxiliarId')->references('id')->on('users');
             $table->timestamps();
         });
     }

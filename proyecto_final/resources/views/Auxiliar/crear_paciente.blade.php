@@ -34,7 +34,6 @@
 
     <main>
         <div class="container p-3">
-            @include('flash-message')
             <form action="{{ route('paciente.store') }}" method="POST">
                 @csrf
                 <div class="row mb-3">
