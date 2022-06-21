@@ -16,6 +16,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
+                        
                         <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
                     </a>
                 </div>

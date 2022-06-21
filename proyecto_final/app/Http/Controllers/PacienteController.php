@@ -17,7 +17,7 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        return view('Auxiliar.gestion_pacientes');
+        return view('Auxiliar.gestion_pacientes')->with('persona', Paciente::all());
     }
 
     /**
@@ -58,7 +58,7 @@ class PacienteController extends Controller
 
             return redirect()->route('paciente.index')->with('success', 'Paciente guardado');
         } else {
-            return redirect()->route('paciente.index')->with('error', 'El número de documento ya existe');
+            return redirect()->route('paciente.create')->with('error', 'El número de documento ya existe');
         }
     }
 
@@ -81,7 +81,8 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $paciente = Paciente::find($id);
+        return view('Auxiliar.editar_paciente')->with('pacientes', $paciente);
     }
 
     /**
@@ -93,7 +94,20 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $paciente = Paciente::find($id);
+        $paciente->documento = $request->iden;
+        $paciente->tipoDoc = $request->tipoDoc;
+        $paciente->nombre = $request->name;
+        $paciente->entidad = $request->entidad;
+        $paciente->sexo = $request->sexo;
+        $paciente->edad = $request->edad;
+        $paciente->regimen = $request->reg;
+        $paciente->tipoAfiliacion = $request->tipoAf;
+        $paciente->cama = $request->cama;
+        $paciente->fechaIngreso = $request->fecha;
+        $paciente->save();
+
+        return redirect()->route('paciente.index')->with('success', 'Datos del paciente actualizados');
     }
 
     /**
@@ -104,6 +118,8 @@ class PacienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paciente = Paciente::find($id);
+        $paciente->delete();
+        return redirect()->route('paciente.index')->with('warning', 'Paciente eliminado con éxito');
     }
 }

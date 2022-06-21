@@ -33,28 +33,70 @@
     </header>
 
     <main>
-        
 
-        <div class="container-fluid w-100 p-3">
-            <a href="#" class="list-group-item list-group-item-action">
-                <div class="text-center p-3">
-                    <img class="img-fluid" src="{{ asset('img/pacientes.png') }}" alt="Enfermera hablando con una niña" width="300">
-                    <figcaption class="p-2">Administrar Pacientes</figcaption>
-                </div>
-            </a>
+        <div class="container w-75 pt-2">
+            @include('flash-message')
         </div>
-        @include('flash-message')
 
-        <div class="container text-center text-white">
-            <div class="row">
-                <div class="col">
-                    <a href="{{route('paciente.create')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 166, 220);">Registrar nuevo paciente</a>
-                </div>
-                <div class="col">
-                    <a href="#" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 166, 220);">Ver los pacientes registrados</a>
-                </div>
+        <div class="container text-center text-white w-50 p-3">
+            <div class="col">
+                <a href="{{route('paciente.create')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 166, 220);">Registrar nuevo paciente</a>
             </div>
         </div>
+        <div class="table-responsive p-4">
+            <table class="table table-bordered border-primary text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Tipo de documento</th>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Sexo</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Entidad</th>
+                        <th scope="col">Régimen de Seguridad Social</th>
+                        <th scope="col">Tipo de afiliación</th>
+                        <th scope="col">Cama</th>
+                        <th scope="col">Fecha de ingreso</th>
+                        <th scope="col">Registrado por</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($persona as $paciente)
+                    <tr>
+                        <td>{{$paciente->tipoDoc}}</td>
+                        <td>{{$paciente->documento}}</td>
+                        <td>{{$paciente->nombre}}</td>
+                        <td>{{$paciente->sexo}}</td>
+                        <td>{{$paciente->edad}}</td>
+                        <td>{{$paciente->entidad}}</td>
+                        <td>{{$paciente->regimen}}</td>
+                        <td>{{$paciente->tipoAfiliacion}}</td>
+                        <td>{{$paciente->cama}}</td>
+                        <td>{{$paciente->fechaIngreso}}</td>
+
+                        <td>{{DB::table('users')->where('id', $paciente->auxiliarId)->value('name');}}</td>
+
+                        <td>
+
+                            <a href="{{ route('paciente.edit',$paciente->id) }}" class="btn btn-primary">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <form action="{{route('paciente.destroy',$paciente ?? ''->id)}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+
     </main>
     <footer>
         <hr>
