@@ -27,4 +27,8 @@ Route::resource('/auxiliar', AuxiliarController::class);
 
 Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
 
-Route::resource('/usuario', '\App\Http\Controllers\UsuariosController');
+// Route::resource('/usuario', '\App\Http\Controllers\UsuariosController');
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::resource('/usuario', '\App\Http\Controllers\UsuariosController');
+});
