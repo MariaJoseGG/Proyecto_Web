@@ -26,3 +26,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/auxiliar', AuxiliarController::class);
 
 Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
+
+Route::resource('/usuario', '\App\Http\Controllers\UsuariosController');
