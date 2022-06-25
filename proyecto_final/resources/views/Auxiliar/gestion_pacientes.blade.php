@@ -22,7 +22,7 @@
 </div>
 
 <div class="table-responsive p-4">
-    <table class="table table-bordered border-primary text-center">
+    <table class="table table-bordered border-primary text-center table-hover">
         <thead class="table-primary">
             <tr>
                 <th scope="col">Tipo de documento</th>
