@@ -32,6 +32,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Rutas para el Auxiliar de enfermería
 Route::group(['middleware' => 'auxiliar'], function () {
     Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
+    Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
 });
 
 Route::resource('/auxiliar', AuxiliarController::class);

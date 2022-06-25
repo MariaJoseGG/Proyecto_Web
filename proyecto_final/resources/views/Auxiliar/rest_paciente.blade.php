@@ -7,7 +7,7 @@
             CONTROL HEMODINÁMICO
         </b>
         <br>
-        Pacientes
+        Pacientes Eliminados
     </p>
 </div>
 
@@ -15,22 +15,9 @@
     @include('flash-message')
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="container text-center text-black w-50 p-3">
-                <div class="col">
-                    <a href="{{route('paciente.create')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 220, 173);"><b>Registrar nuevo paciente</b></a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="container text-center text-black w-50 p-3">
-                <div class="col">
-                    <a href="{{route('restaurar.index')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 220, 173);"><b>Ver pacientes eliminados</b></a>
-                </div>
-            </div>
-        </div>
+<div class="container text-center text-black w-50 p-3">
+    <div class="col">
+        <a href="{{route('paciente.index')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 220, 173);"><b>Ver pacientes activos</b></a>
     </div>
 </div>
 
@@ -49,14 +36,14 @@
                 <th scope="col">Cama</th>
                 <th scope="col">Fecha de ingreso</th>
                 <th scope="col">Registrado por</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Restaurar</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($persona as $paciente)
-            <!-- Solo se van a mostrar los pacientes que se encuentren activos en el sistema -->
-            @if($paciente->estado==="Activo")
-            <tr>
+            <!-- Solo se van a mostrar los pacientes que se encuentren inactivos en el sistema -->
+            @if($paciente->estado==="Inactivo")
+            <tr class="table-active text-secondary">
                 <td>{{$paciente->tipoDoc}}</td>
                 <td>{{$paciente->documento}}</td>
                 <td>{{$paciente->nombre}}</td>
@@ -71,14 +58,11 @@
                 <td>{{DB::table('users')->where('id', $paciente->auxiliarId)->value('name');}}</td>
 
                 <td>
-                    <a href="{{ route('paciente.edit',$paciente->id) }}" class="btn btn-primary">
-                        <i class="bi bi-pencil-fill"></i>
-                    </a>
                     <form action="{{ route('restaurar.update',$paciente->id) }}" method="POST">
                         @method('PUT')
                         @csrf
-                        <button type="submit" class="btn btn-danger">
-                            <i class="bi bi-trash-fill"></i>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-cloud-arrow-up-fill"></i>
                         </button>
                     </form>
                 </td>

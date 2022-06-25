@@ -26,6 +26,7 @@ class Pacientes extends Migration
             $table->string('cama');
             $table->date('fechaIngreso');
             $table->unsignedBigInteger('auxiliarId');
+            $table->string('estado')->default("Activo");
             
             $table->foreign('auxiliarId')->references('id')->on('users');
             $table->timestamps();

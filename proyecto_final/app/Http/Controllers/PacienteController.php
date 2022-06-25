@@ -105,6 +105,7 @@ class PacienteController extends Controller
         $paciente->tipoAfiliacion = $request->tipoAf;
         $paciente->cama = $request->cama;
         $paciente->fechaIngreso = $request->fecha;
+        $paciente->estado = $request->estado;
         $paciente->save();
 
         return redirect()->route('paciente.index')->with('success', 'Datos del paciente actualizados');
