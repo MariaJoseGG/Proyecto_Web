@@ -31,7 +31,7 @@
                 <td>{{$usuario->name}}</td>
                 <td>{{$usuario->email}}</td>
                 
-                @if ($usuario->tipo_usuario === 0)
+                @if ($usuario->tipo_usuario === "0")
                 <td>Auxiliar de enfermería</td>
                 @else
                 <td>Administrador</td>
