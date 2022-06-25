@@ -4,10 +4,10 @@
 <div class="container w-100 bg-primary bg-opacity-75 border border-info text-center text-white">
     <p class="mx-4 my-4 fs-5">
         <b>
-            TÍTULO DE LA SECCIÓN
+            PÁGINA PRINCIPAL
         </b>
         <br>
-        Subtítulo
+        Inicio
     </p>
 </div>
 
