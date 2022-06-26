@@ -105,7 +105,7 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="{{route('api')}}">API</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('fluids.index') }}">Ingreso liquidos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fluids.index') }}">Ingreso de líquidos</a></li>
                                 </ul>
                             </li>
                         </ul>
