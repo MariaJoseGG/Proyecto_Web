@@ -10,31 +10,11 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
-                        <div class="row mb-3">
-                            
-                            <label for="tipo_usuario" class="col-md-4 col-form-label text-md-end ">{{ __('Tipo de usuario') }}</label>
-                        
-                            <div class="col-md-6">
-                                <select id="tipo_usuario" type="text" class="form-control @error('name') is-invalid @enderror form-select" name="tipo_usuario" value="{{ old('tipo_usuario') }}" required autocomplete="name" autofocus>
-                                    <option selected>Seleccione una opción</option>
-                                    <option value="0">AUXILIAR</option>
-                                    <option value="1">ADMINISTRADOR</option>
-                                </select>
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre Completo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror " name="name" value="{{ old('name') }}" required autocomplete="name">
-
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror " name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -48,12 +28,6 @@
 
                             <div class="col-md-6">
                                 <input id="identificacion" type="text" class="form-control @error('name') is-invalid @enderror" name="identificacion" value="{{ old('identificacion') }}" required autocomplete="name">
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -62,12 +36,6 @@
 
                             <div class="col-md-6">
                                 <input id="fechaNac" type="date" class="form-control @error('name') is-invalid @enderror" name="fechaNac" value="{{ old('fechaNac') }}" required autocomplete="name">
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
                         </div>
 
@@ -76,21 +44,11 @@
 
                             <div class="col-md-6">
                                 <select id="sexo" type="text" class="form-control @error('name') is-invalid @enderror form-select" name="sexo" value="{{ old('sexo') }}" required autocomplete="name">
-                                    <option selected>Seleccione una opción</option>
-                                    <option value="M">MASCULINO</option>
-                                    <option value="F">FEMENINO</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Masculino">Masculino</option>
                                 </select>
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
                             </div>
                         </div>
-
-
-
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo electronico') }}</label>
@@ -122,7 +80,6 @@
 
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmar contraseña') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
@@ -131,7 +88,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
+                                    {{ __('Registrarse') }}
                                 </button>
                             </div>
                         </div>
