@@ -1,27 +1,23 @@
 <?php
 
+// Este controlador se creó para manejar el CRUD de Usuarios, que es una función solo para 
+// Administradores
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class AuxiliarController extends Controller
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('auxiliar',['only'=> ['index']]);
-    }
-
     public function index()
     {
-        return view('Auxiliar.auxiliar');
+        return view('Administrador.gestion_usuarios')->with('persona', User::all());
     }
 
     /**
@@ -64,7 +60,8 @@ class AuxiliarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usuario = User::find($id);
+        return view('Administrador.editar_usuario')->with('usuarios', $usuario);
     }
 
     /**
@@ -76,7 +73,13 @@ class AuxiliarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usuario = User::find($id);
+
+        $usuario->name = $request->name;
+        $usuario->tipo_usuario = $request->rol;
+        $usuario->save();
+
+        return redirect()->route('usuario.index')->with('success', 'Datos del usuario actualizados');
     }
 
     /**
@@ -87,6 +90,8 @@ class AuxiliarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::find($id);
+        $usuario->delete();
+        return redirect()->route('usuario.index')->with('warning', 'Usuario eliminado con éxito');
     }
 }

@@ -22,7 +22,7 @@ class Admin
                 return $next($request); //si es administrador continúa al HOME
                 break;
             case ('0'):
-                return redirect('auxiliar'); // si es un usuario normal redirige a la ruta USER
+                return redirect('auxiliar'); // si es un usuario normal redirige a la ruta auxiliar
                 break;
         }
     }

@@ -3,25 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Paciente;
 
-class AuxiliarController extends Controller
+class RestaurarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('auxiliar',['only'=> ['index']]);
-    }
-
     public function index()
     {
-        return view('Auxiliar.auxiliar');
+        return view('Auxiliar.rest_paciente')->with('persona', Paciente::all());
     }
 
     /**
@@ -76,7 +69,19 @@ class AuxiliarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $paciente = Paciente::find($id);
+        if ($paciente->estado === "Activo") {
+            $paciente->estado = "Inactivo";
+            $paciente->save();
+
+            return redirect()->route('paciente.index')->with('error', 'Paciente eliminado');
+        }
+        else {
+            $paciente->estado = "Activo";
+            $paciente->save();
+
+            return redirect()->route('restaurar.index')->with('success', 'Paciente restaurado');
+        }
     }
 
     /**
