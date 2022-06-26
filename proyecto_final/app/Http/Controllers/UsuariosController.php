@@ -76,6 +76,9 @@ class UsuariosController extends Controller
         $usuario = User::find($id);
 
         $usuario->name = $request->name;
+        $usuario->identificacion = $request->identificacion;
+        $usuario->fechaNac = $request->fechaNac;
+        $usuario->sexo = $request->sexo;
         $usuario->tipo_usuario = $request->rol;
         $usuario->save();
 

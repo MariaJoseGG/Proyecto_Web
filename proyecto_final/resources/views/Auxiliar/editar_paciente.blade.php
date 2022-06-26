@@ -23,11 +23,11 @@
             <label for="tipoDoc" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de documento') }}</label>
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="tipoDoc" id="tipoDoc">
-                    <option value="{{$pacientes->tipoDoc}}" selected>{{$pacientes->tipoDoc}}</option>
                     <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
                     <option value="Tarjeta de identidad">Tarjeta de identidad</option>
                     <option value="Registro civil">Registro civil</option>
                     <option value="Pasaporte">Pasaporte</option>
+                    <option value="{{$pacientes->tipoDoc}}" selected>{{$pacientes->tipoDoc}}</option>
                 </select>
             </div>
         </div>
@@ -50,11 +50,11 @@
             <label for="entidad" class="col-md-4 col-form-label text-md-end">{{ __('Entidad') }}</label>
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="entidad" id="entidad">
-                    <option value="{{$pacientes->entidad}}" selected>{{$pacientes->entidad}}</option>
                     <option value="Salud Total">Salud Total</option>
                     <option value="Nueva EPS">Nueva EPS</option>
                     <option value="Sanitas">Sanitas</option>
                     <option value="Otra">Otra</option>
+                    <option value="{{$pacientes->entidad}}" selected>{{$pacientes->entidad}}</option>
                 </select>
             </div>
         </div>
@@ -63,9 +63,9 @@
             <label for="sexo" class="col-md-4 col-form-label text-md-end">{{ __('Sexo') }}</label>
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="sexo" id="sexo">
-                    <option value="{{$pacientes->sexo}}" selected>{{$pacientes->sexo}}</option>
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
+                    <option value="{{$pacientes->sexo}}" selected>{{$pacientes->sexo}}</option>
                 </select>
             </div>
         </div>
@@ -81,12 +81,12 @@
             <label for="reg" class="col-md-4 col-form-label text-md-end">{{ __('Régimen de Seguridad Social') }}</label>
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="reg" id="reg">
-                    <option value="{{$pacientes->regimen}}" selected>{{$pacientes->regimen}}</option>
                     <option value="Contributivo">Contributivo</option>
                     <option value="Subsidiado">Subsidiado</option>
                     <option value="Indígena">Indígena</option>
                     <option value="Vinculado">Vinculado</option>
                     <option value="Particular">Particular</option>
+                    <option value="{{$pacientes->regimen}}" selected>{{$pacientes->regimen}}</option>
                 </select>
             </div>
         </div>
@@ -95,11 +95,11 @@
             <label for="tipoAf" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de afiliación') }}</label>
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="tipoAf" id="tipoAf">
-                    <option value="{{$pacientes->tipoAfiliacion}}" selected>{{$pacientes->tipoAfiliacion}}</option>
                     <option value="Cotizante">Cotizante</option>
                     <option value="Beneficiario">Beneficiario</option>
                     <option value="Adicional">Adicional</option>
                     <option value="Otro">Otro</option>
+                    <option value="{{$pacientes->tipoAfiliacion}}" selected>{{$pacientes->tipoAfiliacion}}</option>
                 </select>
             </div>
         </div>

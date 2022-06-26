@@ -20,6 +20,9 @@
         <thead class="table-primary">
             <tr>
                 <th scope="col">Nombre</th>
+                <th scope="col">Identificación</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Sexo</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Tipo de usuario</th>
                 <th scope="col">Acciones</th>
@@ -29,6 +32,9 @@
             @foreach ($persona as $usuario)
             <tr>
                 <td>{{$usuario->name}}</td>
+                <td>{{$usuario->identificacion}}</td>
+                <td>{{$usuario->fechaNac}}</td>
+                <td>{{$usuario->sexo}}</td>
                 <td>{{$usuario->email}}</td>
                 
                 @if ($usuario->tipo_usuario === "0")
