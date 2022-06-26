@@ -20,16 +20,6 @@
         @method('PUT')
         @csrf
         <div class="row mb-3">
-            <label for="estado" class="col-md-4 col-form-label text-md-end"><b>{{ __('Estado en el sistema') }}</b></label>
-            <div class="col-md-6">
-                <select class="form-select" aria-label="Default select example" name="estado" id="estado">
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row mb-3">
             <label for="tipoDoc" class="col-md-4 col-form-label text-md-end">{{ __('Tipo de documento') }}</label>
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="tipoDoc" id="tipoDoc">
