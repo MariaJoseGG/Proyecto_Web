@@ -36,3 +36,11 @@ Route::group(['middleware' => 'auxiliar'], function () {
 });
 
 Route::resource('/auxiliar', AuxiliarController::class);
+
+Route::get('api', 'App\Http\Controllers\ApiController@index')->name('api');
+
+Route::get('cuadro', 'App\Http\Controllers\FluidController@index')->name('fluids.index');
+
+Route::post('cuadro/creado', 'App\Http\Controllers\FluidController@store')->name('fluids.store');
+
+Route::get('cuadro/generar-pdf', 'App\Http\Controllers\FluidController@pdf')->name('pdf');

@@ -15,7 +15,10 @@ class CreateFluidsTable extends Migration
     {
         Schema::create('fluids', function (Blueprint $table) {
             $table->id();
+            $table->string('hour');
+            $table->float('input')->nullable();
             $table->timestamps();
+
         });
     }
 
