@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuxiliarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::resource('/', '\App\Http\Controllers\ProductosController');
+// Rutas para manejo de sesión
+Auth::routes();
+
+// Rutas para el Administrador
+Route::group(['middleware' => 'admin'], function () {
+    Route::resource('/usuario', '\App\Http\Controllers\UsuariosController');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Rutas para el Auxiliar de enfermería
+Route::group(['middleware' => 'auxiliar'], function () {
+    Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
+    Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
+});
+
+Route::resource('/auxiliar', AuxiliarController::class);
