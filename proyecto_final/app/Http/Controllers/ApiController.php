@@ -14,7 +14,7 @@ class ApiController extends Controller
     public function index()
     {
         //
-        return view('administrador.api');
+        return view('api');
     }
 
     /**

@@ -15,7 +15,7 @@ class FluidController extends Controller
         //
         $fluids=Fluid::all();
        // return view('fluids.index',compact('hours'));
-        return view('fluids.index', compact('fluids'));
+        return view('index', compact('fluids'));
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class FluidController extends Controller
     public function pdf()
     {
         $fluids = Fluid::all();
-        $pdf = PDF::loadView('Administrador.pdf_vista', compact('fluids'));
+        $pdf = PDF::loadView('pdf_vista', compact('fluids'));
         return $pdf->stream('reporte-liquidos.pdf');
     }
 }
