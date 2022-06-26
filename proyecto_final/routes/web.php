@@ -23,5 +23,6 @@ Route::get('api', [ApiController::class, 'index'])->name('api');
 
 Route::get('cuadro',[FluidController::class, 'index'])->name('fluids.index');
 Route::post('cuadro/creado', [FluidController::class, 'store'])->name('fluids.store');
+Route::get('cuadro/generar-pdf', [FluidController::class, 'pdf'])->name('pdf');
 
 // Route::resource('/', '\App\Http\Controllers\ProductosController');

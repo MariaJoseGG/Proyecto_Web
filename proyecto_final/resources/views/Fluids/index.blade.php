@@ -26,5 +26,6 @@
                 </tr>
             </tbody>
         </table>
+        <a href="{{ route('pdf') }}" class="mt-1 btn btn-danger">Generar PDF</a>
     </div>
 </x-app-layouts>
