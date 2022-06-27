@@ -15,11 +15,7 @@ use App\Http\Controllers\AuxiliarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Rutas para manejo de sesión
+// Rutas para manejo de sesiones
 Auth::routes();
 
 // Rutas para el Administrador
@@ -36,6 +32,11 @@ Route::group(['middleware' => 'auxiliar'], function () {
 });
 
 Route::resource('/auxiliar', AuxiliarController::class);
+
+// Rutas públicas
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('api', 'App\Http\Controllers\ApiController@index')->name('api');
 
