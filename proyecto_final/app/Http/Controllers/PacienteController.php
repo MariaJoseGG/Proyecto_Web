@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PacienteController extends Controller
 {
@@ -118,8 +119,15 @@ class PacienteController extends Controller
      */
     public function destroy($id)
     {
-        $paciente = Paciente::find($id);
-        $paciente->delete();
-        return redirect()->route('paciente.index')->with('warning', 'Paciente eliminado con éxito');
+        // $paciente = Paciente::find($id);
+        // $paciente->delete();
+        // return redirect()->route('paciente.index')->with('warning', 'Paciente eliminado con éxito');
+    }
+
+    public function generar_pdf()
+    {
+        $paciente = Paciente::all();
+        $pdf = PDF::loadView('Auxiliar.generar_pdf', compact('paciente'));
+        return $pdf->stream('pacientes.pdf');
     }
 }

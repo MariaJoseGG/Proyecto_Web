@@ -31,6 +31,13 @@
                 </div>
             </div>
         </div>
+        <div class="col">
+            <div class="container text-center text-black w-50 p-3">
+                <div class="col">
+                    <a href="{{route('descargar-pdf')}}" class="rounded-pill p-2 list-group-item list-group-item-action list-group-item" style="background-color: rgb(19, 220, 173);"><b>Generar lista de pacientes (PDF)</b></a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
