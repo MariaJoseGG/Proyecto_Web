@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuxiliarController;
+use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Support\Facades\Request;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +23,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::resource('/', '\App\Http\Controllers\ProductosController');
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('/auxiliar',AuxiliarController::class);
+Route::resource('reporte1','\App\Http\Controllers\Reporte1Controller');
+
+
+
