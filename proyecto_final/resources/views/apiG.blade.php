@@ -14,8 +14,8 @@
     <header>
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand font-monospace" href="#">
-                    <img src="{{asset('img/grafico.png')}}" alt="Imagen del ícono de un gráfico" width="30" height="24" class="d-inline-block align-text-top">
+                <a class="navbar-brand font-monospace" href="{{ url('/') }}">
+                    <img src="{{asset('img/grafico.png')}}" alt="Ícono de un gráfico" width="30" height="24" class="d-inline-block align-text-top">
                 </a>
             </div>
         </nav>
