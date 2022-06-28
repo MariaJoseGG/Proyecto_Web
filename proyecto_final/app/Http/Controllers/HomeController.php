@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Models\User;
+=======
+>>>>>>> report1
 
 class HomeController extends Controller
 {
@@ -25,6 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return view('Administrador.home');
+=======
+        return view('home');
+>>>>>>> report1
     }
 }
